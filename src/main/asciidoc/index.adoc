@@ -1,0 +1,41 @@
+= ReST Docs for the Primes Application
+
+This is the API documentation for the RESTful service generating primes
+
+== Get primes up to number provided
+
+=== HTTP request
+include::{snippets}/api-documentation/request10-primes/http-request.adoc[]
+include::{snippets}/api-documentation/request10-primes/path-parameters.adoc[]
+
+=== HTTP response
+include::{snippets}/api-documentation/request10-primes/http-response.adoc[]
+
+=== Using curl
+include::{snippets}/api-documentation/request10-primes/curl-request.adoc[]
+
+== Get primes up to number provided using sieve algorithm
+
+=== HTTP request
+include::{snippets}/api-documentation/request10-primes-with-sieve/http-request.adoc[]
+include::{snippets}/api-documentation/request10-primes-with-sieve/path-parameters.adoc[]
+include::{snippets}/api-documentation/request10-primes-with-sieve/request-parameters.adoc[]
+
+=== HTTP response
+include::{snippets}/api-documentation/request10-primes-with-sieve/http-response.adoc[]
+
+=== Using curl
+include::{snippets}/api-documentation/request10-primes-with-sieve/curl-request.adoc[]
+
+== Get primes up to number provided using unsupported algorithm
+
+=== HTTP request
+include::{snippets}/api-documentation/request-unsupported-fails/http-request.adoc[]
+include::{snippets}/api-documentation/request-unsupported-fails/path-parameters.adoc[]
+include::{snippets}/api-documentation/request-unsupported-fails/request-parameters.adoc[]
+
+=== HTTP response
+include::{snippets}/api-documentation/request-unsupported-fails/http-response.adoc[]
+
+=== Using curl
+include::{snippets}/api-documentation/request-unsupported-fails/curl-request.adoc[]
