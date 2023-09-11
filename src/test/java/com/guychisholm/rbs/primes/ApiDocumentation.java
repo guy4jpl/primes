@@ -49,7 +49,7 @@ public class ApiDocumentation {
                 .andDo(document("{class-name}/{method-name}",
                         pathParameters(
                                 parameterWithName("initial").description("Return primes up to this number")),
-                        requestParameters(
+                        queryParameters(
                                 parameterWithName("algorithm").description("Algorithm used to generate primes"))
                         )
                 );
@@ -62,7 +62,7 @@ public class ApiDocumentation {
                 .andDo(document("{class-name}/{method-name}",
                         pathParameters(
                                 parameterWithName("initial").description("Return primes up to this number")),
-                        requestParameters(
+                        queryParameters(
                                 parameterWithName("algorithm").description("Algorithm used to generate primes"))
                         )
                 );
@@ -75,7 +75,7 @@ public class ApiDocumentation {
                 .andDo(document("{class-name}/{method-name}",
                         pathParameters(
                                 parameterWithName("initial").description("Return primes up to this number")),
-                        requestParameters(
+                        queryParameters(
                                 parameterWithName("algorithm").description("Algorithm used to generate primes"))
                         )
                 );
