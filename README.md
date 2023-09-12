@@ -81,6 +81,6 @@ The REST call would look something like http://your.host.com/primes/10 and shoul
 
 #### Optional Extensions
 - [x] Deploy the solution to a chosen platform that we can access.
-- [ ] Consider supporting varying return content types such as XML based, that should be configurable using the requested media type.
+- [x] Consider supporting varying return content types such as XML based, that should be configurable using the requested media type.
 - [x] Consider ways to improve overall performance e.g. caching results, concurrent algorithm
 - [x] Consider supporting multiple algorithms that can be switched based on optional parameters

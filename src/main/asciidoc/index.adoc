@@ -14,6 +14,18 @@ include::{snippets}/api-documentation/request10-primes/http-response.adoc[]
 === Using curl
 include::{snippets}/api-documentation/request10-primes/curl-request.adoc[]
 
+== Get primes up to number provided in XML
+
+=== HTTP request
+include::{snippets}/api-documentation/request10-primes/xml/http-request.adoc[]
+include::{snippets}/api-documentation/request10-primes/xml/path-parameters.adoc[]
+
+=== HTTP response
+include::{snippets}/api-documentation/request10-primes/xml/http-response.adoc[]
+
+=== Using curl
+include::{snippets}/api-documentation/request10-primes/xml/curl-request.adoc[]
+
 == Get primes up to number provided using sieve algorithm
 
 === HTTP request

@@ -43,6 +43,17 @@ public class ApiDocumentation {
     }
 
     @Test
+    public void request10PrimesInXml() throws Exception {
+        mockMvc.perform(get("/primes/{initial}", 10).header("Accept", "application/xml"))
+                .andExpect(status().isOk())
+                .andDo(document("{class-name}/{method-name}/xml",
+                        pathParameters(
+                            parameterWithName("initial").description("Return primes up to this number"))
+                        )
+                );
+    }
+
+    @Test
     public void request10PrimesWithSieve() throws Exception {
         mockMvc.perform(get("/primes/{initial}", 10).param("algorithm", "sieve"))
                 .andExpect(status().isOk())

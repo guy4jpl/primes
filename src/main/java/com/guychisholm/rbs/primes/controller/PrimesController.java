@@ -7,6 +7,7 @@ import com.guychisholm.rbs.primes.service.PrimesService;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -31,7 +32,7 @@ public class PrimesController {
         this.context = context;
     }
 
-    @GetMapping(value = "/{initial}")
+    @GetMapping(value = "/{initial}", produces = {MediaType.APPLICATION_JSON_VALUE,MediaType.APPLICATION_XML_VALUE})
     public Primes getPrimes(
             @PathVariable @Min(0) @Max(100_000_000) Integer initial,
             @RequestParam(required = false) String algorithm) {

@@ -8,7 +8,6 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.test.web.servlet.MockMvc;
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -18,6 +17,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.xpath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(PrimesController.class)
@@ -54,6 +54,21 @@ class PrimesControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.initial", is(10)))
                 .andExpect(jsonPath("$.primes", contains(2, 3, 5, 7)));
+    }
+
+    @Test
+    public void primeRequestWithInitialShouldReturnPrimesinXml() throws Exception {
+        // given
+        List<Integer> mockPrimes = Arrays.asList(2, 3, 5, 7);
+        when(service.getPrimes(10)).thenReturn(mockPrimes);
+
+        // when
+        this.mockMvc.perform(get("/primes/10").header("Accept", "application/xml"))
+
+         // then
+                .andExpect(status().isOk())
+                .andExpect(xpath("/Primes/initial").string(is("10")))
+                .andExpect(xpath("/Primes/primes").string(is("2357")));
     }
 
     @Test
